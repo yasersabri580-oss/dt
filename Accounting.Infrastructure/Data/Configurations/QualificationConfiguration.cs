@@ -16,7 +16,7 @@ public class QualificationConfiguration : IEntityTypeConfiguration<Qualification
         builder.Property(q => q.YearLabel).IsRequired().HasMaxLength(20);
         builder.Property(q => q.SortOrder).IsRequired();
         builder.Property(q => q.IsActive).IsRequired();
-        builder.Property(q => q.Title).IsRequired().HasColumnType("nvarchar(max)");
+        builder.Property(q => q.Title).IsRequired().HasColumnType("nvarchar(max)").HasLocalizedJson();
         builder.Property(q => q.Body).IsRequired().HasColumnType("nvarchar(max)");
     }
 }

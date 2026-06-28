@@ -17,8 +17,8 @@ public class Article
     public DateTime UpdatedAt { get; set; }
 
     // ── jsonb columns ───────────────────────────────────────────────────────
-    /// <summary>Localised title stored as JSON string.</summary>
-    public string Title { get; set; } = string.Empty;
+    /// <summary>Localised title stored as JSON map (e.g. {"en":"...", "fa":"..."}).</summary>
+    public Dictionary<string, string> Title { get; set; } = new();
 
     /// <summary>Localised excerpt stored as JSON string.</summary>
     public string Excerpt { get; set; } = string.Empty;

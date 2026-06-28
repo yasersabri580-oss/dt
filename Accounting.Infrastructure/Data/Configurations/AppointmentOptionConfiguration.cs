@@ -16,7 +16,7 @@ public class AppointmentOptionConfiguration : IEntityTypeConfiguration<Appointme
         builder.Property(a => a.IconName).IsRequired().HasMaxLength(100);
         builder.Property(a => a.SortOrder).IsRequired();
         builder.Property(a => a.IsActive).IsRequired();
-        builder.Property(a => a.Title).IsRequired().HasColumnType("nvarchar(max)");
+        builder.Property(a => a.Title).IsRequired().HasColumnType("nvarchar(max)").HasLocalizedJson();
         builder.Property(a => a.Body).IsRequired().HasColumnType("nvarchar(max)");
     }
 }

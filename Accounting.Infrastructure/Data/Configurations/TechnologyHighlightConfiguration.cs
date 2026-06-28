@@ -15,7 +15,7 @@ public class TechnologyHighlightConfiguration : IEntityTypeConfiguration<Technol
         builder.Property(t => t.DoctorId).IsRequired();
         builder.Property(t => t.SortOrder).IsRequired();
         builder.Property(t => t.IsActive).IsRequired();
-        builder.Property(t => t.Title).IsRequired().HasColumnType("nvarchar(max)");
+        builder.Property(t => t.Title).IsRequired().HasColumnType("nvarchar(max)").HasLocalizedJson();
         builder.Property(t => t.Body).IsRequired().HasColumnType("nvarchar(max)");
     }
 }

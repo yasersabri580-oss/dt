@@ -23,7 +23,7 @@ public class ArticleConfiguration : IEntityTypeConfiguration<Article>
         builder.Property(a => a.UpdatedAt).IsRequired();
 
         // jsonb → nvarchar(max)
-        builder.Property(a => a.Title).IsRequired().HasColumnType("nvarchar(max)");
+        builder.Property(a => a.Title).IsRequired().HasColumnType("nvarchar(max)").HasLocalizedJson();
         builder.Property(a => a.Excerpt).IsRequired().HasColumnType("nvarchar(max)");
         builder.Property(a => a.Category).IsRequired().HasColumnType("nvarchar(max)");
         builder.Property(a => a.Content).IsRequired().HasColumnType("nvarchar(max)");

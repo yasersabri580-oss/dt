@@ -16,7 +16,7 @@ public class DoctorServiceConfiguration : IEntityTypeConfiguration<DoctorService
         builder.Property(s => s.IconName).IsRequired().HasMaxLength(100);
         builder.Property(s => s.SortOrder).IsRequired();
         builder.Property(s => s.IsActive).IsRequired();
-        builder.Property(s => s.Title).IsRequired().HasColumnType("nvarchar(max)");
+        builder.Property(s => s.Title).IsRequired().HasColumnType("nvarchar(max)").HasLocalizedJson();
         builder.Property(s => s.Body).IsRequired().HasColumnType("nvarchar(max)");
     }
 }
