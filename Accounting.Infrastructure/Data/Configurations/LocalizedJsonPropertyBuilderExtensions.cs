@@ -28,9 +28,21 @@ public static class LocalizedJsonPropertyBuilderExtensions
         => value is null ? EmptyJsonObject : JsonSerializer.Serialize(value);
 
     private static Dictionary<string, string> Deserialize(string? value)
-        => string.IsNullOrWhiteSpace(value)
-            ? new Dictionary<string, string>()
-            : JsonSerializer.Deserialize<Dictionary<string, string>>(value) ?? new Dictionary<string, string>();
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return new Dictionary<string, string>();
+        }
+
+        try
+        {
+            return JsonSerializer.Deserialize<Dictionary<string, string>>(value) ?? new Dictionary<string, string>();
+        }
+        catch (JsonException)
+        {
+            return new Dictionary<string, string>();
+        }
+    }
 
     private static bool AreEqual(Dictionary<string, string>? left, Dictionary<string, string>? right)
     {
@@ -73,5 +85,5 @@ public static class LocalizedJsonPropertyBuilderExtensions
     }
 
     private static Dictionary<string, string> Snapshot(Dictionary<string, string>? value)
-        => value is null ? new Dictionary<string, string>() : value.ToDictionary(x => x.Key, x => x.Value, StringComparer.Ordinal);
+        => value is null ? new Dictionary<string, string>() : new Dictionary<string, string>(value, StringComparer.Ordinal);
 }
