@@ -39,6 +39,7 @@
     <Folder Include="Accounting.Domain\helper\" />
     <Folder Include="Accounting.Infrastructure\Data\Migrations\" />
     <Folder Include="logs\" />
+    <Folder Include="guide\" />
   </ItemGroup>
 
 </Project>

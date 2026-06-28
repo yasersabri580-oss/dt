@@ -8,4 +8,9 @@ public class User
     public string? NameK { get; set; }
     public string? CodeM { get; set; }
     public string? Role { get; set; } = "User";
+
+
+    
+
+
 }
