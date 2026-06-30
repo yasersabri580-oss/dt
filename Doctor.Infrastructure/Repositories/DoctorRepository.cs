@@ -43,4 +43,9 @@ public class DoctorRepository : IDoctorRepository
 
     public void Delete(Domain.Entities.Doctor doctor) =>
         _db.Doctors.Remove(doctor);
+
+    public Task<IEnumerable<Domain.Entities.Doctor>> GetDoctorsBySpecializationAsync(string specialization)
+    {
+        throw new NotImplementedException();
+    }
 }

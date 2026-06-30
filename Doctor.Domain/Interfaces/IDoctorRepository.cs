@@ -13,4 +13,6 @@ public interface IDoctorRepository
     Task AddAsync(Entities.Doctor doctor);
     void Update(Entities.Doctor doctor);
     void Delete(Entities.Doctor doctor);
+
+    Task<IEnumerable<Entities.Doctor>> GetDoctorsBySpecializationAsync(string specialization);
 }

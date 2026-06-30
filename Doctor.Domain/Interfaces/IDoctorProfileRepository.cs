@@ -10,4 +10,6 @@ public interface IDoctorProfileRepository
     Task AddAsync(DoctorProfile profile);
     void Update(DoctorProfile profile);
     void Delete(DoctorProfile profile);
+
+    Task<DoctorProfile?> GetByUserIdAsync(long userId);
 }

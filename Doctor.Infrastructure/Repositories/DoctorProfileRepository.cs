@@ -27,4 +27,16 @@ public class DoctorProfileRepository : IDoctorProfileRepository
 
     public void Delete(DoctorProfile profile) =>
         _db.DoctorProfiles.Remove(profile);
+
+    public async Task<DoctorProfile?> GetByUserIdAsync(long userId) =>
+        await _db.DoctorProfiles
+            .AsNoTracking()
+            .Join(
+                _db.Doctors,
+                profile => profile.DoctorId,
+                doctor => doctor.Id,
+                (profile, doctor) => new { profile, doctor.UserId })
+            .Where(x => x.UserId == userId)
+            .Select(x => x.profile)
+            .FirstOrDefaultAsync();
 }
