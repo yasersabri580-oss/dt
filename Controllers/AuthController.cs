@@ -1,10 +1,10 @@
 using System.Security.Claims;
-using Accounting.Application.DTOs.Auth;
-using Accounting.Application.Interfaces;
+using Doctor.Application.DTOs.Auth;
+using Doctor.Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Accounting_helal.Controllers;
+namespace Doctor.Controllers;
 
 /// <summary>
 /// Handles user authentication: registration, login, token refresh, logout,

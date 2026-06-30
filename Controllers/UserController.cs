@@ -1,9 +1,10 @@
-using Accounting.Application.DTOs.User;
-using Accounting.Application.Interfaces;
+
+using Doctor.Application.DTOs.User;
+using Doctor.Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Accounting_helal.Controllers;
+namespace Doctor.Controllers;
 
 /// <summary>
 /// Manages system user accounts (User).

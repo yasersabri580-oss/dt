@@ -3,7 +3,7 @@ using System.Linq;                     // required for .OfType<> and .Any()
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Accounting_helal.Middleware;
+namespace Doctor.Middleware;
 
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
 public sealed class SkipResponseEnvelopeAttribute : Attribute
@@ -131,7 +131,7 @@ public class StandardApiResponseFilter : IAsyncResultFilter
 
         var valueType = value.GetType();
         // Ensure the namespace containing ApiResponse<> is imported, e.g.:
-        // using Accounting_helal.Models;
+        // using Doctor.Models;
       
 
         if (value is ProblemDetails pd)

@@ -1,14 +1,15 @@
 using System.Reflection;
 using System.Security.Claims;
 using System.Text;
-using Accounting.Application;
-using Accounting.Infrastructure;
-using Accounting_helal.Middleware;
+
+using Doctor.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Scalar.AspNetCore;
 using Serilog;
+using Doctor.Infrastructure;
+using Doctor.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -191,7 +192,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Accounting Helal API",
+        Title = "Doctor Helal API",
         Version = "v1",
         Description =
             "Full-featured accounting backend for Helal."
@@ -303,7 +304,7 @@ app.UseSwagger();
 app.MapScalarApiReference(options =>
 {
     options
-        .WithTitle("Accounting Helal API")
+        .WithTitle("Doctor Helal API")
 
         .WithTheme(ScalarTheme.BluePlanet)
 

@@ -2,7 +2,7 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 
-namespace Accounting_helal.Middleware;
+namespace Doctor.Middleware;
 
 public class ExceptionHandlingMiddleware
 {
